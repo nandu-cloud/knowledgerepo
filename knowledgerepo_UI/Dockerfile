@@ -5,10 +5,10 @@ FROM node:12.18.3-alpine3.9 AS builder
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY package.json .
 
 # Install dependencies
-RUN npm install
+RUN npm install --force
 
 # Copy the application
 COPY . .
